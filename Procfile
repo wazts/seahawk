@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath server hello:app
+web: gunicorn --pythonpath server/rest rest.wsgi 
