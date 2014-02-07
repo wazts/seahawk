@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath server/rest rest.wsgi 
+web: gunicorn --pythonpath server/rest rest.wsgi
