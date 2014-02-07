@@ -20,7 +20,12 @@ Once VirtualEnv is installed, move into the cloned seahawk repo to create the vi
 
 This creates a sandbox with pip installed and allows you to control the packages used in the system. 
 
-Next, install all the neccessary packages for the code to run. To do this use `pip` and the `requirements.txt`.
+Next, install all the neccessary packages for the code to run. To do this use `pip` and the `requirements.txt`. Some of the packages require other libraries/packages on the system.
+	
+	libpq-dev (Ubuntu/Debian) or postgresql-devel
+	python-dev
+
+After those are installed you can use the following to get the necessary packages.
 
     pip install -r requirements.txt
 
