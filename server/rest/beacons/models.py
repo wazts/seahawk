@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from uuidfield import UUIDField
 
 class Beacon (models.Model):
 	"""
@@ -8,7 +7,7 @@ class Beacon (models.Model):
 	"""
 	time_created = models.DateTimeField (auto_now_add=True)
 	user = models.ForeignKey (User, related_name='beacons', blank=True)
-	uuid = UUIDField(auto=True)
+	uuid = models.CharField (max_length=32, unique=False)
 	major = models.PositiveIntegerField()
 	minor = models.PositiveIntegerField()
 

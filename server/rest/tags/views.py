@@ -1,4 +1,5 @@
 from tags.models import Tag
+from tags.models import Beacon
 from tags.serializers import TagSerializer, UserSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
@@ -17,7 +18,8 @@ from rest_framework.reverse import reverse
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
-        'tags': reverse('tag-list', request=request, format=format)
+        'tags': reverse('tag-list', request=request, format=format),
+        'beacons': reverse('beacon-list', request=request, format=format),
     })
 
 
