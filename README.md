@@ -9,14 +9,15 @@ The server side stack is geared for Heroku and has all the neccessary files to w
 # Installation
 Seahawk uses python as a backend and the RESTful API runs on Django. To setup the proper environment on Linux, you first need VirtualEnv for sandboxing the python environment.
 
-    apt-get install python-virtualenv
+    $ python3 -m venv myvenv
+	$ source myvenv/bin/activate
+	(myvenv)$
 
-Alternatively, you can install pip and then do `pip install virtualenv`.
+	(myvenv)$ curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
 
-Once VirtualEnv is installed, move into the cloned seahawk repo to create the virtual environment and set the shell in the environment.
-
-    virtualenv venv
-    source venv/bin/activate
+	(myvenv)$ deactivate
+	$ source myvenv/bin/activate
+	(myvenv)$ which pip
 
 This creates a sandbox with pip installed and allows you to control the packages used in the system. 
 
