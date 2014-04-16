@@ -1,5 +1,5 @@
-from beacons.models import Beacon
-from beacons.serializers import BeaconSerializer
+from beacons.models import *
+from beacons.serializers import BeaconSerializer, BTBeaconSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
 from rest_framework import permissions
@@ -13,13 +13,6 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
 
-@api_view(('GET',))
-def api_root(request, format=None):
-    return Response({
-        'beacons': reverse('beacon-list', request=request, format=format)
-    })
-
-
 class BeaconViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
@@ -31,3 +24,10 @@ class BeaconViewSet(viewsets.ModelViewSet):
     serializer_class = BeaconSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
+
+class BTBeaconViewSet (viewsets.ModelViewSet):
+    queryset = BluetoothBeacon.objects.all()
+    serializer_class = BTBeaconSerializer
+
+    def pre_save(self, obj):
+        obj.user = self.request.user
