@@ -1,3 +1,5 @@
 from django.contrib import admin
+from beacons.models import AreaBeacon, BluetoothBeacon
 
-# Register your models here.
+admin.site.register (AreaBeacon)
+admin.site.register (BluetoothBeacon)

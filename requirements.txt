@@ -12,6 +12,7 @@ dirspec==13.10
 dj-database-url==0.3.0
 dj-static==0.0.5
 django-filter==0.7
+django-tastypie==0.11.0
 django-toolbelt==0.0.1
 django-uuidfield==0.5.0
 djangorestframework==2.3.13
@@ -29,7 +30,9 @@ pycrypto==2.6
 pygobject==3.10.0
 pystache==0.5.3
 python-apt==0.8.9.1ubuntu1
+python-dateutil==2.2
 python-debian==0.1.21-nmu2ubuntu1
+python-mimeparse==0.1.4
 pyxdg==0.25
 requests==2.2.1
 six==1.3.0
