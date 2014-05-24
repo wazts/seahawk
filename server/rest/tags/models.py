@@ -11,3 +11,6 @@ class Tag (models.Model):
 
 	class Meta:
 		ordering = ('time_created',)
+
+	def __unicode__(self):
+		return "{0}: {1}".format(self.user, self.pk)

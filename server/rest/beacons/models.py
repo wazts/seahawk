@@ -12,6 +12,9 @@ class Beacon (models.Model):
 	class Meta:
 		ordering = ('time_created',)
 
+	def __unicode__(self):
+		return self.pk
+
 class AreaBeacon (Beacon):
 	"""
 		The Area beacon is used for tagging when a user doesn't have 
